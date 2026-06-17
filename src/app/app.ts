@@ -1,12 +1,34 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TranslocoService } from '@jsverse/transloco';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('guide-angular-translations-i18n');
+
+  constructor(private translocoService: TranslocoService) {
+  }
+
+  ngOnInit() {
+    //Set the default language to English
+    this.translocoService.setActiveLang('en-us');
+  }
+
+  //To set the language dynamically based on the user selection
+  changeLang(lang?: string) {
+
+    if (!lang) {
+      return;
+    }
+
+    this.translocoService.setActiveLang(lang);
+
+    console.log(`Language changed to ${lang}`);
+  }
 }

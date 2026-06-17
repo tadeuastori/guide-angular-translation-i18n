@@ -2,10 +2,9 @@
 <div class="container">
   <h1><label for="exampleFormControlInput1" class="form-label">Email address</label></h1>
   <h3><label for="exampleFormControlInput1" class="form-label">Email address</label></h3>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Select Language</option>
-    <option value="1">English</option>
-    <option value="2">Portuguese</option>
+  <select #langSelect class="form-select" aria-label="Default select example" (change)="changeLang(langSelect.value)">
+    <option selected value="en-us">English</option>
+    <option value="pt-br">Portuguese</option>
   </select>
 </div>
 
