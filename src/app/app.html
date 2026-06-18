@@ -1,11 +1,13 @@
-
 <div class="container">
-  <h1><label for="exampleFormControlInput1" class="form-label">Email address</label></h1>
-  <h3><label for="exampleFormControlInput1" class="form-label">Email address</label></h3>
-  <select #langSelect class="form-select" aria-label="Default select example" (change)="changeLang(langSelect.value)">
-    <option selected value="en-us">English</option>
-    <option value="pt-br">Portuguese</option>
-  </select>
+  <ng-container *transloco="let t">
+    <h1><label for="exampleFormControlInput1" class="form-label">{{ t('application.app_name') }}</label></h1>
+    <h4><label for="exampleFormControlInput1" class="form-label">{{ t('application.description') }}</label></h4>
+    <select #langSelect class="form-select" aria-label="Default select example" (change)="changeLang(langSelect.value)">
+      <option selected value="en-us">{{ t('languages.english') }}</option>
+      <option value="pt-br">{{ t('languages.portuguese') }}</option>
+      <option value="fr-fr">{{ t('languages.french') }}</option>
+    </select>
+  </ng-container>
 </div>
 
 <hr>
@@ -13,102 +15,110 @@
 <main class="main">
 
   <div class="container border p-3" id="menu">
-    <h4>Menu Example</h4>
-    <br>
+    <ng-container *transloco="let t">
+      <h4>{{ t('block.menu') }}</h4>
+      <br>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">About</a>
-            </li>
-          </ul>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">        
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">{{ t('menu.home') }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">{{ t('menu.product') }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">{{ t('menu.contact') }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">{{ t('menu.about') }}</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </ng-container>    
   </div>
 
   <br><br>
   
-  <div class="container border p-3" id="alerts"> 
-    <h4>Dialog Message Example</h4>
-    <br>
+  <div class="container border p-3" id="alerts">    
+    <ng-container *transloco="let t">
+      <h4>{{ t('block.alerts') }}</h4>
+      <br>
 
-    <div class="alert alert-primary" role="alert">
-      A simple primary alert—check it out!
-    </div>
-    <div class="alert alert-secondary" role="alert">
-      A simple secondary alert—check it out!
-    </div>
-    <div class="alert alert-success" role="alert">
-      A simple success alert—check it out!
-    </div>
-    <div class="alert alert-danger" role="alert">
-      A simple danger alert—check it out!
-    </div>
-    <div class="alert alert-warning" role="alert">
-      A simple warning alert—check it out!
-    </div>
-    <div class="alert alert-info" role="alert">
-      A simple info alert—check it out!
-    </div>
-    <div class="alert alert-light" role="alert">
-      A simple light alert—check it out!
-    </div>
-    <div class="alert alert-dark" role="alert">
-      A simple dark alert—check it out!
-    </div>
+      <div class="alert alert-primary" role="alert">
+        {{ t('alerts.new_message') }}
+      </div>
+      <div class="alert alert-secondary" role="alert">
+        {{ t('alerts.form_sent') }}
+      </div>
+      <div class="alert alert-success" role="alert">
+        {{ t('alerts.file_uploade') }}
+      </div>
+      <div class="alert alert-danger" role="alert">
+        {{ t('alerts.image_deleted') }}
+      </div>
+    </ng-container>
+    
+    
   </div>
 
   <br><br>
 
   <div class="container border p-3" id="buttons">
-    <h4>Buttons Example</h4>
-    <br>
+    <ng-container *transloco="let t">
+      <h4>{{ t('block.buttons') }}</h4>
+      <br>
 
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
-
-    <button type="button" class="btn btn-link">Link</button>
+      <button type="button" class="btn btn-primary">{{ t('buttons.confirm') }}</button>
+      <button type="button" class="btn btn-secondary">{{ t('buttons.cancel') }}</button>
+      <button type="button" class="btn btn-success">{{ t('buttons.add') }}</button>
+      <button type="button" class="btn btn-danger">{{ t('buttons.delete') }}</button>
+      <button type="button" class="btn btn-warning">{{ t('buttons.back') }}</button>
+    </ng-container>    
   </div>
 
   <br><br>
 
-  <div class="container" id="modal">
-    <div class="modal" tabindex="-1">
+  <div class="container border p-3" id="modal">
+
+    <ng-container *transloco="let t">
+      <h4>{{ t('block.modal') }}</h4>
+      {{ t('labels.using_pipe') }}      
+      <br><br>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      {{ t('buttons.open_modal') }}
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">{{ 'modal.title' | transloco }}</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>Modal body text goes here.</p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a leo ut augue vestibulum consectetur quis id lacus. Mauris in blandit lacus. Nunc non metus sit amet tortor posuere mollis. Integer nec nunc non leo auctor gravida. Nam velit diam, dictum in dolor quis, imperdiet scelerisque enim. Phasellus condimentum diam at faucibus sodales. Mauris vel mi nec nulla lobortis euismod a ac sem.
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'buttons.close' | transloco }}</button>
+            <button type="button" class="btn btn-primary">{{ 'buttons.save' | transloco }}</button>
           </div>
         </div>
       </div>
     </div>
+    </ng-container>    
   </div>
 </main>
+
+<br><br>
 
 <router-outlet />
