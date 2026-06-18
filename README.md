@@ -26,7 +26,7 @@ Transloco allows you to define translations for your content in different langua
 * [1. Installation Commands](#1--installation)
 * [2. Transloco Configuration](#2-%EF%B8%8F-configuration)
 * [3. How to Use in HTML/TS](#3--how-to-use)
-* [4. Get from State](#4--example-of-how-to-get-language-setting-from-state)
+* [4. How to get language setting from State](#4--example-of-how-to-get-language-setting-from-state)
 
 ---
 
