@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { FormsModule } from '@angular/forms';
@@ -11,8 +11,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class App implements OnInit {
   protected readonly title = signal('guide-angular-translations-i18n');
+  private translocoService = inject(TranslocoService);
 
-  constructor(private translocoService: TranslocoService) {
+  constructor() {
   }
 
   ngOnInit() {
