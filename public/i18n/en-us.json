@@ -1,1 +1,46 @@
-{}
+{
+    "application": {
+        "app_name": "guide-angular-translations-i18n",
+        "description": "Guide to implement translations i18n in Angular projects"     
+    },
+    "block": {
+        "menu":"Menu Example",
+        "alerts": "Dialog Message Example",
+        "buttons": "Buttons Example",
+        "modal": "Modal Example"
+    },
+    "menu": {
+        "home": "Home",
+        "product": "Product",
+        "contact": "Contact",
+        "about": "About"      
+    },
+    "buttons": {
+        "confirm":"Confirm",
+        "cancel":"Cancel",
+        "back":"Back",
+        "add":"Add",
+        "delete":"Delete",
+        "close":"Close",
+        "save":"Save",
+        "open_modal":"Open Modal"
+    },
+    "alerts": {
+        "file_uploade": "The file was uploaded",
+        "form_sent": "The form was sent.",
+        "image_deleted": "The Imagem was deleted",
+        "new_message" : "You have a new message"
+    }, 
+    "modal": {
+        "title":"Modal title"    
+    },
+    "labels": {
+        "using_pipe": "Using Pipe",
+        "using_directive": "Using Directive"
+    },
+    "languages": {
+        "english": "English",
+        "portuguese": "Portuguese",
+        "french": "French (Language not available)"
+    }
+}
